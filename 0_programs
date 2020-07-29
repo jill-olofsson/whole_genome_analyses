@@ -1,0 +1,29 @@
+1_CleanRawReads_and_Demultiplex.sh
+	Trimmomatic: http://www.usadellab.org/cms/?page=trimmomatic
+	Stacks: http://catchenlab.life.illinois.edu/stacks/
+
+2_bowtie2_map_to_a_reference_and_call_SNPs.sh
+	Bowtie2: http://bowtie-bio.sourceforge.net/bowtie2/index.shtml
+	SAMtools: http://www.htslib.org/download/
+	BCFtools: http://www.htslib.org/download/
+
+3_merge_and_filter_SNPs.sh
+	BCFtools: http://www.htslib.org/download/
+	VCFtools: https://vcftools.github.io/downloads.html
+
+4_final_filter_SNPs.sh
+	BCFtools: http://www.htslib.org/download/
+	VCFtools: https://vcftools.github.io/downloads.html
+
+5a_analyses.sh
+	RAxML: https://cme.h-its.org/exelixis/web/software/raxml/
+	PGDSpider: http://www.cmpg.unibe.ch/software/PGDSpider/
+	R: https://www.r-project.org/
+	adegenet: http://adegenet.r-forge.r-project.org/
+	BEAGLE: https://faculty.washington.edu/browning/beagle_utilities/utilities.html
+	NGSadmix: http://www.popgen.dk/software/index.php/NgsAdmix
+
+5b_genome_scans.sh
+	VCFtools: https://vcftools.github.io/downloads.html
+	beanplot: https://www.rdocumentation.org/packages/beanplot/versions/1.2
+	python: https://www.python.org/downloads/
