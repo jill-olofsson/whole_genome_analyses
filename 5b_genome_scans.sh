@@ -9,6 +9,7 @@ files=/home/$USER/files/genome_scans
 	# Step 1: Filter the vcf file only keeping individuals assigned to nuclear clade II and IIIa
 		# setting the mac filter to 21 gives an approximate maf of 0.05
 vcftools --gzvcf merged_plate01-12_ASEM_C4_v1_unique_f2_covfilt_allsites_TEmask_chr_max99_SNP.recode.vcf.gz --max-missing 0.1 --mac 21 --weir-fst-pop ${files}/ntII_samples.txt --weir-fst-pop ${files}/ntIIIa_samples.txt --fst-window-size 500000 --fst-window-step 10000 --out ntII_ntIIIa_500kb10kb_90missing_mac21
+			# resulting vcf file provided in files/geneome_scan
 
 	# Step 2: Calculate null distributions 
 		# write an empty file to store all the distributions in
