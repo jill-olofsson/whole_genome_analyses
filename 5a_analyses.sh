@@ -5,6 +5,7 @@
 RAXML=/home/$USER/path_to_raxml
 	# step 1: execute raxml
 ${RAXML}/raxmlHPC-SSE3 -s merged_plate01-12_ASEM_C4_v1_unique_f2_covfilt_allsites_TEmask_chr_max99_SNP_mac56_missing90_thin1k.phy -n merged_plate01-12_ASEM_C4_v1_unique_f2_covfilt_allsites_TEmask_chr_max99_SNP_mac56_missing90_thin1k -m GTRGAMMA -p 12345 -f a -# 100 -x 12345
+	# phy file provided in files/phy
 
 # Analyses 2: Preform pca on the nuclear SNPs
 	# step 0: covert vcf file to structure file using PDGSpider
@@ -15,6 +16,7 @@ coverter=/home/$USER/path_to_converter_file
 sed 's/0\/0:0,.,./0\/0:0,20,20/g' merged_plate01-12_ASEM_C4_v1_unique_f2_covfilt_allsites_TEmask_chr_max99_SNP_mac56_missing90_thin1k.recode.vcf >  merged_plate01-12_ASEM_C4_v1_unique_f2_covfilt_allsites_TEmask_chr_max99_SNP_mac56_missing90_thin1k_fixPL.vcf
 
 java -Xmx1024m -Xms512m -jar ${PDGSpider}/PGDSpider2-cli.jar -inputfile merged_plate01-12_ASEM_C4_v1_unique_f2_covfilt_allsites_TEmask_chr_max99_SNP_mac56_missing90_thin1k_fixPL.vcf inputformat VCF -outputfile merged_plate01-12_ASEM_C4_v1_unique_f2_covfilt_allsites_TEmask_chr_max99_SNP_mac56_missing90_thin1k_fixPL.str -outputformat STRUCTURE -spid ${coverter}/vcf-to-str.spid
+	# str file provided in files/pca
 
 	# Step 1: Preform the pca using adgenet in R
 		# prepare a file with all the samples in the order they appear and meta data such as the nuclear clade assignment of each sample (provided)
